@@ -11,22 +11,27 @@ document.addEventListener("DOMContentLoaded", () => {
   nextNet.setDate(nextNet.getDate() + daysUntilThu);
   nextNet.setHours(20, 0, 0, 0);
 
-  function updateCountdown(){
+  function updateClock(){
+
     const now = new Date();
-    let diff = nextNet - now;
-    if(diff < 0) diff = 0;
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    const ids = {days:d, hours:h, minutes:m, seconds:s};
-    Object.keys(ids).forEach(id => {
-      const el = document.getElementById(id);
-      if(el) el.textContent = String(ids[id]).padStart(2, "0");
-    });
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+
+    // Local Time
+    document.getElementById("localTime").innerHTML =
+        now.toLocaleTimeString([],{
+            hour:'2-digit',
+            minute:'2-digit',
+            second:'2-digit'
+        });
+
+    // UTC Time
+    document.getElementById("utcTime").innerHTML =
+        now.toUTCString().split(" ")[4] + " UTC";
+
+}
+
+updateClock();
+
+setInterval(updateClock,1000);
 
   const lightbox = document.querySelector(".lightbox");
   const lightboxImg = document.querySelector(".lightbox img");
