@@ -1,17 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector(".menu-btn");
-  const nav = document.querySelector(".nav-links");
-  if (menuBtn && nav) {
-    menuBtn.addEventListener("click", () => nav.classList.toggle("open"));
-  }
-
-  const nextNet = new Date();
-  const day = nextNet.getDay();
-  const daysUntilThu = (4 - day + 7) % 7 || 7;
-  nextNet.setDate(nextNet.getDate() + daysUntilThu);
-  nextNet.setHours(20, 0, 0, 0);
-
-  function updateClock(){
+function updateClock(){
 
     const now = new Date();
 
@@ -32,16 +19,3 @@ document.addEventListener("DOMContentLoaded", () => {
 updateClock();
 
 setInterval(updateClock,1000);
-
-  const lightbox = document.querySelector(".lightbox");
-  const lightboxImg = document.querySelector(".lightbox img");
-  document.querySelectorAll(".gallery img").forEach(img => {
-    img.addEventListener("click", () => {
-      if(lightbox && lightboxImg){
-        lightboxImg.src = img.src;
-        lightbox.style.display = "flex";
-      }
-    });
-  });
-  if(lightbox) lightbox.addEventListener("click", () => lightbox.style.display = "none");
-});
