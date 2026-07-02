@@ -28,6 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  const url =
+    `https://api.open-meteo.com/v1/forecast?` +
+    `latitude=${lat}&longitude=${lon}` +
+    `&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,surface_pressure` +
+    `&temperature_unit=fahrenheit` +
+    `&wind_speed_unit=mph` +
+    `&pressure_unit=inhg`;
+
+  document.getElementById("weatherTemp").textContent =
+    Math.round(current.temperature_2m) + "°F";
+
+document.getElementById("feelsLike").textContent =
+    Math.round(current.apparent_temperature) + "°F";
+
+document.getElementById("humidity").textContent =
+    current.relative_humidity_2m + "%";
+
+document.getElementById("wind").textContent =
+    Math.round(current.wind_speed_10m) + " mph";
+
+document.getElementById("barometer").textContent =
+    current.surface_pressure.toFixed(2) + " inHg";
+
   const lightbox = document.querySelector(".lightbox");
   const lightboxImg = document.querySelector(".lightbox img");
   document.querySelectorAll(".gallery img").forEach(img => {
