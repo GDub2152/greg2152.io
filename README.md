@@ -1,14 +1,12 @@
-# KC8GW Radio Operations Dashboard
+# KC8GW Operations Center
 
-GitHub Pages site for KC8GW.
+GitHub Pages site for KC8GW / WSGZ373.
 
-Includes:
-- KC8GW patch logo on every page
-- Airshow background image
-- Extra Class license wording
-- GMRS callsign WSGZ373
-- QRZ, solar propagation, ADS-B, media, projects, and contact pages
-- Links to TheBlowtorchOfParma.com and Parma575.com
-- Private-safe ADS-B JSON placeholder at `assets/data/adsb.json`
+## Upload
+Copy all files into `GDub2152/greg2152.io` and enable GitHub Pages from the main branch.
 
-Upload the contents of this folder to `https://github.com/GDub2152/greg2152.io.git`.
+## Privacy design
+The ADS-B receiver is not exposed publicly. The site reads `assets/data/adsb.json`, which can later be updated by a Raspberry Pi or GitHub Action.
+
+## Media
+Photos and videos link to the Google Drive folder. Keep sharing set to Viewer only.
