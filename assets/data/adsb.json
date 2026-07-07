@@ -1,9 +1,1 @@
-{
-  "status": "PRIVATE_FEED_PLACEHOLDER",
-  "aircraft_now": 0,
-  "messages_per_second": 0,
-  "max_range_nm": 0,
-  "receiver_area": "Northeast Ohio",
-  "last_update": "Not connected yet",
-  "note": "Your Raspberry Pi can safely push this summary file to GitHub without exposing the receiver."
-}
+{"aircraft_now":0,"aircraft_today":0,"messages_sec":0,"max_range_nm":0,"uptime":"Pi upload not configured yet","status":"Private Summary Mode","last_update":"Waiting for feeder JSON"}
